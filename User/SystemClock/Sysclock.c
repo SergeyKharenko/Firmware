@@ -11,6 +11,7 @@ void HSE_System_Clock_Init()
 	if (HSE_Start_Status == SUCCESS)		//如果开启成功再进行下一步配置
 	{
 		//指令预取使能，加快指令执行速度
+		//
 		FLASH_PrefetchBufferCmd(ENABLE);
 		FLASH_SetLatency(FLASH_Latency_2);
 

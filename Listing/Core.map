@@ -33,6 +33,7 @@ Section Cross References
     main.o(.text) refers to sysclock.o(.text) for HSE_System_Clock_Init
     main.o(.text) refers to wifi.o(.text) for Cache_Init_Get
     main.o(.text) refers to memcpya.o(.text) for __aeabi_memcpy4
+    main.o(.text) refers to bsp_usart.o(.text) for EXTERN_USART_CFG
     main.o(.text) refers to tim_measure.o(.text) for TIM_General_Init
     main.o(.text) refers to stm32f10x_tim.o(.text) for TIM_Cmd
     main.o(.text) refers to stm32f10x_it.o(.bss) for Wifi_Cache
@@ -185,18 +186,18 @@ Image Symbol Table
     .text                                    0x08001eb8   Section        0  stm32f10x_usart.o(.text)
     .text                                    0x080022c0   Section        0  stm32f10x_it.o(.text)
     .text                                    0x08002348   Section        0  main.o(.text)
-    .text                                    0x0800240c   Section        0  sysclock.o(.text)
-    .text                                    0x08002478   Section        0  tim_measure.o(.text)
-    .text                                    0x0800254c   Section        0  wifi.o(.text)
-    .text                                    0x08002840   Section        0  bsp_usart.o(.text)
-    .text                                    0x08002a58   Section        0  memcpya.o(.text)
-    .text                                    0x08002a7c   Section        0  strcat.o(.text)
-    .text                                    0x08002a94   Section        0  strcpy.o(.text)
-    .text                                    0x08002aa8   Section       36  init.o(.text)
-    i.__scatterload_copy                     0x08002acc   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08002ada   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08002adc   Section       14  handlers.o(i.__scatterload_zeroinit)
-    .constdata                               0x08002aea   Section      127  wifi.o(.constdata)
+    .text                                    0x08002420   Section        0  sysclock.o(.text)
+    .text                                    0x0800248c   Section        0  tim_measure.o(.text)
+    .text                                    0x08002560   Section        0  wifi.o(.text)
+    .text                                    0x08002854   Section        0  bsp_usart.o(.text)
+    .text                                    0x08002a6c   Section        0  memcpya.o(.text)
+    .text                                    0x08002a90   Section        0  strcat.o(.text)
+    .text                                    0x08002aa8   Section        0  strcpy.o(.text)
+    .text                                    0x08002abc   Section       36  init.o(.text)
+    i.__scatterload_copy                     0x08002ae0   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08002aee   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08002af0   Section       14  handlers.o(i.__scatterload_zeroinit)
+    .constdata                               0x08002afe   Section      127  wifi.o(.constdata)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
@@ -483,54 +484,54 @@ Image Symbol Table
     SysTick_Handler                          0x080022d9   Thumb Code     2  stm32f10x_it.o(.text)
     TIM2_IRQHandler                          0x080022db   Thumb Code    52  stm32f10x_it.o(.text)
     USART1_IRQHandler                        0x0800230f   Thumb Code    42  stm32f10x_it.o(.text)
-    main                                     0x08002349   Thumb Code   180  main.o(.text)
-    HSE_System_Clock_Init                    0x0800240d   Thumb Code   106  sysclock.o(.text)
-    TIM_NVIC_Init                            0x08002479   Thumb Code    34  tim_measure.o(.text)
-    TIM_GPIO_Init                            0x0800249b   Thumb Code    32  tim_measure.o(.text)
-    TIM_Mode_Init                            0x080024bb   Thumb Code    54  tim_measure.o(.text)
-    TIM_IC_Mode_Init                         0x080024f1   Thumb Code    40  tim_measure.o(.text)
-    TIM_General_Init                         0x08002519   Thumb Code    48  tim_measure.o(.text)
-    Wifi_Delay_A_While                       0x0800254d   Thumb Code    16  wifi.o(.text)
-    WIFI_CMD_TCP_SETUP                       0x0800255d   Thumb Code    36  wifi.o(.text)
-    Cache_Init_Get                           0x08002581   Thumb Code    28  wifi.o(.text)
-    Cache_Clear                              0x0800259d   Thumb Code    32  wifi.o(.text)
-    Cache_Add                                0x080025bd   Thumb Code    14  wifi.o(.text)
-    Wifi_Receive_CMD_CMP                     0x080025cb   Thumb Code    56  wifi.o(.text)
-    Wifi_Send                                0x08002603   Thumb Code    30  wifi.o(.text)
-    Wifi_Init                                0x08002621   Thumb Code   158  wifi.o(.text)
-    Wifi_Client_Connected                    0x080026bf   Thumb Code    38  wifi.o(.text)
-    Wifi_Get_Client_IP                       0x080026e5   Thumb Code    38  wifi.o(.text)
-    Wifi_TCP_Setup                           0x0800270b   Thumb Code    76  wifi.o(.text)
-    Wifi_Direct_CMD                          0x08002757   Thumb Code    84  wifi.o(.text)
-    Wifi_Receive_IRQ_CMD                     0x080027ab   Thumb Code    56  wifi.o(.text)
-    WIFI_NVIC_CFG                            0x08002841   Thumb Code    42  bsp_usart.o(.text)
-    WIFI_USART_CFG                           0x0800286b   Thumb Code   136  bsp_usart.o(.text)
-    EXTERN_USART_CFG                         0x080028f3   Thumb Code   128  bsp_usart.o(.text)
-    EXTERN_NVIC_CFG                          0x08002973   Thumb Code    30  bsp_usart.o(.text)
-    Usart_SendByte                           0x08002991   Thumb Code    30  bsp_usart.o(.text)
-    Usart_SendString                         0x080029af   Thumb Code    42  bsp_usart.o(.text)
-    Usart_SendUint32                         0x080029d9   Thumb Code   114  bsp_usart.o(.text)
-    __aeabi_memcpy                           0x08002a59   Thumb Code    36  memcpya.o(.text)
-    __aeabi_memcpy4                          0x08002a59   Thumb Code     0  memcpya.o(.text)
-    __aeabi_memcpy8                          0x08002a59   Thumb Code     0  memcpya.o(.text)
-    strcat                                   0x08002a7d   Thumb Code    24  strcat.o(.text)
-    strcpy                                   0x08002a95   Thumb Code    18  strcpy.o(.text)
-    __scatterload                            0x08002aa9   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x08002aa9   Thumb Code     0  init.o(.text)
-    __scatterload_copy                       0x08002acd   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08002adb   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08002add   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    WIFI_CMD_RETURE_DISABLED                 0x08002aea   Data           7  wifi.o(.constdata)
-    WIFI_CMD_BASIC_TEST                      0x08002af1   Data           5  wifi.o(.constdata)
-    WIFI_CMD_AP_BUILD                        0x08002af6   Data          20  wifi.o(.constdata)
-    WIFI_CMD_AP_SETUP                        0x08002b0a   Data          38  wifi.o(.constdata)
-    WIFI_CMD_AP_CONNECTION_GET               0x08002b30   Data          11  wifi.o(.constdata)
-    WIFI_CMD_AP_MULTI_CONNECTION_DISABLE     0x08002b3b   Data          14  wifi.o(.constdata)
-    WIFI_CMD_DIRECT_CONNECTION_STEP1         0x08002b49   Data          15  wifi.o(.constdata)
-    WIFI_CMD_DIRECT_CONNECTION_STEP2         0x08002b58   Data          13  wifi.o(.constdata)
-    WIFI_CMD_DIRECT_CONNECTION_END           0x08002b65   Data           4  wifi.o(.constdata)
-    Region$$Table$$Base                      0x08002b6c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08002b8c   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08002349   Thumb Code   194  main.o(.text)
+    HSE_System_Clock_Init                    0x08002421   Thumb Code   106  sysclock.o(.text)
+    TIM_NVIC_Init                            0x0800248d   Thumb Code    34  tim_measure.o(.text)
+    TIM_GPIO_Init                            0x080024af   Thumb Code    32  tim_measure.o(.text)
+    TIM_Mode_Init                            0x080024cf   Thumb Code    54  tim_measure.o(.text)
+    TIM_IC_Mode_Init                         0x08002505   Thumb Code    40  tim_measure.o(.text)
+    TIM_General_Init                         0x0800252d   Thumb Code    48  tim_measure.o(.text)
+    Wifi_Delay_A_While                       0x08002561   Thumb Code    16  wifi.o(.text)
+    WIFI_CMD_TCP_SETUP                       0x08002571   Thumb Code    36  wifi.o(.text)
+    Cache_Init_Get                           0x08002595   Thumb Code    28  wifi.o(.text)
+    Cache_Clear                              0x080025b1   Thumb Code    32  wifi.o(.text)
+    Cache_Add                                0x080025d1   Thumb Code    14  wifi.o(.text)
+    Wifi_Receive_CMD_CMP                     0x080025df   Thumb Code    56  wifi.o(.text)
+    Wifi_Send                                0x08002617   Thumb Code    30  wifi.o(.text)
+    Wifi_Init                                0x08002635   Thumb Code   158  wifi.o(.text)
+    Wifi_Client_Connected                    0x080026d3   Thumb Code    38  wifi.o(.text)
+    Wifi_Get_Client_IP                       0x080026f9   Thumb Code    38  wifi.o(.text)
+    Wifi_TCP_Setup                           0x0800271f   Thumb Code    76  wifi.o(.text)
+    Wifi_Direct_CMD                          0x0800276b   Thumb Code    84  wifi.o(.text)
+    Wifi_Receive_IRQ_CMD                     0x080027bf   Thumb Code    56  wifi.o(.text)
+    WIFI_NVIC_CFG                            0x08002855   Thumb Code    42  bsp_usart.o(.text)
+    WIFI_USART_CFG                           0x0800287f   Thumb Code   136  bsp_usart.o(.text)
+    EXTERN_USART_CFG                         0x08002907   Thumb Code   128  bsp_usart.o(.text)
+    EXTERN_NVIC_CFG                          0x08002987   Thumb Code    30  bsp_usart.o(.text)
+    Usart_SendByte                           0x080029a5   Thumb Code    30  bsp_usart.o(.text)
+    Usart_SendString                         0x080029c3   Thumb Code    42  bsp_usart.o(.text)
+    Usart_SendUint32                         0x080029ed   Thumb Code   114  bsp_usart.o(.text)
+    __aeabi_memcpy                           0x08002a6d   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x08002a6d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x08002a6d   Thumb Code     0  memcpya.o(.text)
+    strcat                                   0x08002a91   Thumb Code    24  strcat.o(.text)
+    strcpy                                   0x08002aa9   Thumb Code    18  strcpy.o(.text)
+    __scatterload                            0x08002abd   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x08002abd   Thumb Code     0  init.o(.text)
+    __scatterload_copy                       0x08002ae1   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08002aef   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08002af1   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    WIFI_CMD_RETURE_DISABLED                 0x08002afe   Data           7  wifi.o(.constdata)
+    WIFI_CMD_BASIC_TEST                      0x08002b05   Data           5  wifi.o(.constdata)
+    WIFI_CMD_AP_BUILD                        0x08002b0a   Data          20  wifi.o(.constdata)
+    WIFI_CMD_AP_SETUP                        0x08002b1e   Data          38  wifi.o(.constdata)
+    WIFI_CMD_AP_CONNECTION_GET               0x08002b44   Data          11  wifi.o(.constdata)
+    WIFI_CMD_AP_MULTI_CONNECTION_DISABLE     0x08002b4f   Data          14  wifi.o(.constdata)
+    WIFI_CMD_DIRECT_CONNECTION_STEP1         0x08002b5d   Data          15  wifi.o(.constdata)
+    WIFI_CMD_DIRECT_CONNECTION_STEP2         0x08002b6c   Data          13  wifi.o(.constdata)
+    WIFI_CMD_DIRECT_CONNECTION_END           0x08002b79   Data           4  wifi.o(.constdata)
+    Region$$Table$$Base                      0x08002b80   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08002ba0   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     measure_mode                             0x20000028   Data           1  stm32f10x_it.o(.data)
@@ -547,9 +548,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002bbc, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002bd0, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002b8c, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002ba0, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -573,35 +574,35 @@ Memory Map of the image
     0x08001eb6   0x08001eb6   0x00000002   PAD
     0x08001eb8   0x08001eb8   0x00000408   Code   RO          379    .text               stm32f10x_usart.o
     0x080022c0   0x080022c0   0x00000088   Code   RO          403    .text               stm32f10x_it.o
-    0x08002348   0x08002348   0x000000c4   Code   RO          435    .text               main.o
-    0x0800240c   0x0800240c   0x0000006a   Code   RO          457    .text               sysclock.o
-    0x08002476   0x08002476   0x00000002   PAD
-    0x08002478   0x08002478   0x000000d4   Code   RO          469    .text               tim_measure.o
-    0x0800254c   0x0800254c   0x000002f4   Code   RO          481    .text               wifi.o
-    0x08002840   0x08002840   0x00000218   Code   RO          502    .text               bsp_usart.o
-    0x08002a58   0x08002a58   0x00000024   Code   RO          517    .text               mc_w.l(memcpya.o)
-    0x08002a7c   0x08002a7c   0x00000018   Code   RO          519    .text               mc_w.l(strcat.o)
-    0x08002a94   0x08002a94   0x00000012   Code   RO          521    .text               mc_w.l(strcpy.o)
-    0x08002aa6   0x08002aa6   0x00000002   PAD
-    0x08002aa8   0x08002aa8   0x00000024   Code   RO          539    .text               mc_w.l(init.o)
-    0x08002acc   0x08002acc   0x0000000e   Code   RO          543    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08002ada   0x08002ada   0x00000002   Code   RO          544    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08002adc   0x08002adc   0x0000000e   Code   RO          545    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08002aea   0x08002aea   0x0000007f   Data   RO          483    .constdata          wifi.o
-    0x08002b69   0x08002b69   0x00000003   PAD
-    0x08002b6c   0x08002b6c   0x00000020   Data   RO          541    Region$$Table       anon$$obj.o
+    0x08002348   0x08002348   0x000000d8   Code   RO          435    .text               main.o
+    0x08002420   0x08002420   0x0000006a   Code   RO          457    .text               sysclock.o
+    0x0800248a   0x0800248a   0x00000002   PAD
+    0x0800248c   0x0800248c   0x000000d4   Code   RO          469    .text               tim_measure.o
+    0x08002560   0x08002560   0x000002f4   Code   RO          481    .text               wifi.o
+    0x08002854   0x08002854   0x00000218   Code   RO          502    .text               bsp_usart.o
+    0x08002a6c   0x08002a6c   0x00000024   Code   RO          517    .text               mc_w.l(memcpya.o)
+    0x08002a90   0x08002a90   0x00000018   Code   RO          519    .text               mc_w.l(strcat.o)
+    0x08002aa8   0x08002aa8   0x00000012   Code   RO          521    .text               mc_w.l(strcpy.o)
+    0x08002aba   0x08002aba   0x00000002   PAD
+    0x08002abc   0x08002abc   0x00000024   Code   RO          539    .text               mc_w.l(init.o)
+    0x08002ae0   0x08002ae0   0x0000000e   Code   RO          543    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08002aee   0x08002aee   0x00000002   Code   RO          544    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08002af0   0x08002af0   0x0000000e   Code   RO          545    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08002afe   0x08002afe   0x0000007f   Data   RO          483    .constdata          wifi.o
+    0x08002b7d   0x08002b7d   0x00000003   PAD
+    0x08002b80   0x08002b80   0x00000020   Data   RO          541    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002b8c, Size: 0x000020b0, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002ba0, Size: 0x000020b0, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08002b8c   0x00000014   Data   RW           25    .data               system_stm32f10x.o
-    0x20000014   0x08002ba0   0x00000014   Data   RW          318    .data               stm32f10x_rcc.o
-    0x20000028   0x08002bb4   0x00000008   Data   RW          405    .data               stm32f10x_it.o
+    0x20000000   0x08002ba0   0x00000014   Data   RW           25    .data               system_stm32f10x.o
+    0x20000014   0x08002bb4   0x00000014   Data   RW          318    .data               stm32f10x_rcc.o
+    0x20000028   0x08002bc8   0x00000008   Data   RW          405    .data               stm32f10x_it.o
     0x20000030        -       0x00000068   Zero   RW          404    .bss                stm32f10x_it.o
     0x20000098        -       0x00000014   Zero   RW          482    .bss                wifi.o
-    0x200000ac   0x08002bbc   0x00000004   PAD
+    0x200000ac   0x08002bd0   0x00000004   PAD
     0x200000b0        -       0x00002000   Zero   RW            1    STACK               startup_stm32f10x_md.o
 
 
@@ -614,7 +615,7 @@ Image component sizes
 
        536         14          0          0          0       2441   bsp_usart.o
          0          0          0          0          0       4508   core_cm3.o
-       196         16          0          0          0        619   main.o
+       216         22          0          0          0        627   main.o
        220         22          0          0          0       1745   misc.o
         36          8        236          0       8192        836   startup_stm32f10x_md.o
       1468         34          0          0          0       8150   stm32f10x_flash.o
@@ -629,7 +630,7 @@ Image component sizes
        756         94        127          0         20      20037   wifi.o
 
     ----------------------------------------------------------------------
-     10584        430        398         48       8320     343258   Object Totals
+     10604        436        398         48       8320     343266   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          3          0          4          0   (incl. Padding)
 
@@ -671,15 +672,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     10750        446        398         48       8320     342382   Grand Totals
-     10750        446        398         48       8320     342382   ELF Image Totals
-     10750        446        398         48          0          0   ROM Totals
+     10770        452        398         48       8320     342390   Grand Totals
+     10770        452        398         48       8320     342390   ELF Image Totals
+     10770        452        398         48          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                11148 (  10.89kB)
+    Total RO  Size (Code + RO Data)                11168 (  10.91kB)
     Total RW  Size (RW Data + ZI Data)              8368 (   8.17kB)
-    Total ROM Size (Code + RO Data + RW Data)      11196 (  10.93kB)
+    Total ROM Size (Code + RO Data + RW Data)      11216 (  10.95kB)
 
 ==============================================================================
 

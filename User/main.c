@@ -32,8 +32,9 @@ int main()
 	while(Wifi_TCP_Setup() != NO_ERROR);
 	if (Wifi_Direct_CMD(true) != NO_ERROR)
 		return 0;
-
-	//EXTERN_USART_CFG();
+//
+	//
+	EXTERN_USART_CFG();
 	TIM_General_Init();
 	measure_mode = 1;				//置位开始测量
 	while (1)
@@ -41,7 +42,7 @@ int main()
 		if (measure_mode == 0)
 		{
 			TIM_Cmd(TIM2, DISABLE);		//关闭定时器，防止带来无效值
-			//Usart_SendUint32(EXTERN_USARTx, frequency);	//输出频率
+			Usart_SendUint32(EXTERN_USARTx, frequency);	//输出频率
 			//Lan_TCP_Run(frequency);					//以太网输出
 			Wifi_Send(NULL, frequency, true);
 			frequency = 0;				//频率值恢复0
